@@ -7,6 +7,7 @@
   </head>
   <body>
       <form method="GET">
+          <legend>Form 1</legend>
           <fieldset>
             <label>City: </label><br>
             <input type="text" name="cityName" id="city"><br>
@@ -16,6 +17,7 @@
           </fieldset>
       </form>
       <form method="GET">
+          <legend>Form 2</legend>
           <fieldset>
             <label>Zipcode:</label><br>
             <input type="text" name="zip" id="zipcode"><br>
@@ -24,6 +26,18 @@
             <input type="submit" value="Submit" id="submit2">
           </fieldset>
       </form>
+      <h2>Result for Form 1:</h2>
+      <ul>
+        <li><span>Temp:</span><span id="temp1"></span></li>
+        <li><span>Weather:</span><span id="weather1"></span></li>
+        <li><span>Wind:</span><span id="wind1"></span></li>
+      </ul>
+      <h2>Result for Form 2:</h2>
+      <ul>
+        <li><span>Temp:</span><span id="temp2"></span></li>
+        <li><span>Weather:</span><span id="weather2"></span></li>
+        <li><span>Wind</span><span id="wind2"></span></li>
+      </ul>
       <script src="script.js"></script>
   </body>
 </html>
