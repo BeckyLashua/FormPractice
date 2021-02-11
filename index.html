@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      const appid = 'd877b15d71aacb05338b8d876cc470b7';
-      let req = new XMLHttpRequest();
-      req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=02141,us&appid=" + appid, false);
-      req.send(null);
-      console.log(JSON.parse(req.responseText));
-
-      let req2 = new XMLHttpRequest();
-      req2.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Cambridge,us&appid=" + appid, false); 
-      req2.send(null);
-      console.log(JSON.parse(req2.responseText));
-      
-    </script>
+    <meta charset="UTF-8">
+	  <title>A5</title>
+	  <link rel="stylesheet" type="text/css">
   </head>
   <body>
-      <form id = "city">
+      <form method="GET">
           <fieldset>
             <label>City: </label><br>
-            <input type="text" name="cityName"><br>
+            <input type="text" name="cityName" id="city"><br>
             <label>Country:</label><br>
-            <input type="test" name="country"><br>
-            <input type="submit" value="Submit">
+            <input type="test" name="country" id="country"><br>
+            <input type="submit" value="Submit" id="submit1">
           </fieldset>
       </form>
-      <form id = "zipcode">
+      <form method="GET">
           <fieldset>
             <label>Zipcode:</label><br>
-            <input type="text" name="zipcodeNum"><br>
+            <input type="text" name="zip" id="zipcode"><br>
             <label>Country:</label><br>
-            <input type="test" name="countryCode"><br>
-            <input type="submit" value="Submit">
+            <input type="test" name="countryCode" id="country2"><br>
+            <input type="submit" value="Submit" id="submit2">
           </fieldset>
       </form>
+      <script src="script.js"></script>
   </body>
 </html>
