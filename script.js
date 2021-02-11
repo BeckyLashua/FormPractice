@@ -6,7 +6,10 @@ form1_submit.addEventListener('click', (event) => {
     let req = new XMLHttpRequest();
     req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + appid, false);
     req.send(null);
-    console.log(JSON.parse(req.responseText));
+    let response1 = JSON.parse(req.responseText);
+    document.getElementById('weather1').textContent = response1.weather[0].description;
+    document.getElementById('temp1').textContent = response1.main.temp;
+    document.getElementById('wind1').textContent = response1.wind.speed;
     event.preventDefault();
 });
 
@@ -18,7 +21,10 @@ form2_submit.addEventListener('click', (event) => {
     let req2 = new XMLHttpRequest();
     req2.open("GET", "http://api.openweathermap.org/data/2.5/weather?zip="+ zipcode + "," + country2 + "&appid=" + appid, false); 
     req2.send(null);
-    console.log(JSON.parse(req2.responseText)); 
+    let response2 = JSON.parse(req2.responseText); 
+    document.getElementById('weather2').textContent = response2.weather[0].description;
+    document.getElementById('temp2').textContent = response2.main.temp;
+    document.getElementById('wind2').textContent = response2.wind.speed;
     event.preventDefault();   
 });
 
