@@ -45,5 +45,23 @@ function bindSubmit() {
         req2.send(null);
         event.preventDefault();   
     });
+
+    let form3_submit = document.getElementById('submitPost');
+    form3_submit.addEventListener('click', (event) => {
+        let req3 = new XMLHttpRequest();
+        let payload = document.getElementById('enteredText').value;
+        req3.open("POST", "http://httpbin.org/post", true);
+        req3.setRequestHeader('Content-Type', 'application/json');
+        req3.addEventListener('load', () => {
+            if(req3.status >= 200 && req3.status < 400) {
+                let response3 = JSON.parse(req3.responseText);
+                document.getElementById('returnedText').textContent = JSON.parse(response3.data);
+            } else {
+                console.log('Error in network request: ' + req3.statusText);
+            }
+        })
+        req3.send(JSON.stringify(payload));
+        event.preventDefault();
+    });
 }
 
